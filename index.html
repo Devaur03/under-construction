@@ -4,29 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Under Construction</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      background: #f7f7f7;
-      color: #333;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
+    .rotate-clockwise {
+      animation: rotateClockwise 8s linear infinite;
     }
-    h1 {
-      font-size: 3em;
+
+    .rotate-counter-clockwise {
+      animation: rotateCounterClockwise 5s linear infinite;
     }
-    p {
-      font-size: 1.5em;
+
+    @keyframes rotateClockwise {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes rotateCounterClockwise {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .img-hover:hover {
+      transform: scale(1.03);
+    }
+
+    .text-shadow {
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     }
   </style>
 </head>
-<body>
-  <h1>🚧 Under Construction 🚧</h1>
-  <p>This site is currently under development.<br>Available soon. Stay tuned!</p>
+<body class="bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white min-h-screen flex flex-col justify-center items-center overflow-hidden px-6">
+
+  <!-- Rotating Gears -->
+  <svg class="absolute top-10 left-10 w-20 h-20 text-indigo-400 rotate-clockwise opacity-20" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M13.828 1a1 1 0 0 1 .949.684l.518 1.682a8.044 8.044 0 0 1 1.691 1.018l1.617-.558a1 1 0 0 1 1.316.949v3a1 1 0 0 1-.684.949l-1.682.518a8.044 8.044 0 0 1-1.018 1.691l.558 1.617a1 1 0 0 1-.949 1.316h-3a1 1 0 0 1-.949-.684l-.518-1.682a8.044 8.044 0 0 1-1.691-1.018l-1.617.558a1 1 0 0 1-1.316-.949v-3a1 1 0 0 1 .684-.949l1.682-.518a8.044 8.044 0 0 1 1.018-1.691l-.558-1.617A1 1 0 0 1 9.172 1h3z"/>
+  </svg>
+
+  <svg class="absolute bottom-10 right-10 w-14 h-14 text-purple-400 rotate-counter-clockwise opacity-20" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M13.828 1a1 1 0 0 1 .949.684l.518 1.682a8.044 8.044 0 0 1 1.691 1.018l1.617-.558a1 1 0 0 1 1.316.949v3a1 1 0 0 1-.684.949l-1.682.518a8.044 8.044 0 0 1-1.018 1.691l.558 1.617a1 1 0 0 1-.949 1.316h-3a1 1 0 0 1-.949-.684l-.518-1.682a8.044 8.044 0 0 1-1.691-1.018l-1.617.558a1 1 0 0 1-1.316-.949v-3a1 1 0 0 1 .684-.949l1.682-.518a8.044 8.044 0 0 1 1.018-1.691l-.558-1.617A1 1 0 0 1 9.172 1h3z"/>
+  </svg>
+
+  <!-- Heading -->
+  <h1 class="text-5xl md:text-6xl font-extrabold text-white text-center mb-6 text-shadow">
+    🚧 Under Construction 🚧
+  </h1>
+  <p class="text-lg md:text-xl text-center max-w-2xl text-gray-300 mb-12">
+    Our site is currently under construction but we are trying hard to bring you the new design.
+  </p>
+
+  <!-- Coding Image -->
+  <img
+    src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif"
+    alt="A coder typing at a computer"
+    class="img-hover transition-transform duration-500 ease-in-out rounded-xl shadow-xl max-w-md w-full mb-12"
+  />
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-400 mt-auto mb-4">
+    © 2025 Devansh Gaur. All rights reserved.
+  </footer>
+
 </body>
 </html>
